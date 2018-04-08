@@ -1,0 +1,1 @@
+export const APP_CONSTANT: string = "http://localhost:8080/";

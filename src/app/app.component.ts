@@ -1,3 +1,4 @@
+import { AppService } from './app.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  tables: string[] = [];
+
+  constructor(private appService: AppService) {
+
+  }
+  search(schemaName) {
+    this.appService.getTableNames(schemaName).subscribe(data => {
+      this.tables = data;
+    })
+  }
+
+
 }
